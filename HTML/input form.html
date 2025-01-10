@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input form attribute</h1>
+
+<p>điền thông tin đêr võ đức nhât 2121051095 biết </p>
+
+<form action="/action_page.php" id="form1">
+  <label for="fname">họ :</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>The "Last name" field below is outside the form element, but still part of the form.</p>
+
+<label for="lname">tên :</label>
+<input type="text" id="lname" name="lname" form="form1">
+
+<h1>võ đức nhật 2121051095</h1>
+
+<p>The formenctype attribute specifies how the form data should be encoded when submitted.</p>
+
+<form action="/action_page_binary.asp" method="post">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+  <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+</form>
+
+
+</body>
+</html>
