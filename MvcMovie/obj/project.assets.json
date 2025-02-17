@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+      "projectUniqueName": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
       "projectName": "MvcMovie",
-      "projectPath": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+      "projectPath": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
       "packagesPath": "C:\\Users\\voduc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\obj\\",
+      "outputPath": "D:\\Net_Core_API\\MvcMovie\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\voduc\\AppData\\Roaming\\NuGet\\NuGet.Config"
