@@ -9,7 +9,7 @@ namespace MvcMovie.Models
         public float Weight { get; set; }
 
         [Required]
-        [Range(0.5, 2.5, ErrorMessage = "Chiều cao phải từ 0.5 đến 2.5 mét")]
+        [Range(0.5, 2, ErrorMessage = "Chiều cao phải từ 0.5 đến 2.5 mét")]
         public float Height { get; set; }
 
         public float BMI => Weight / (Height * Height);
@@ -18,7 +18,7 @@ namespace MvcMovie.Models
         {
             get
             {
-                if (BMI < 18.5) return "Gầy hahahahhahahah";
+                if (BMI < 18.5) return "Gầy ";
                 if (BMI < 24.9) return "Bình thường";
                 if (BMI < 29.9) return "Thừa cân";
                 return "Béo phì";

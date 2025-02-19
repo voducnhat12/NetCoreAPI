@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {}
+    "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {}
   },
   "projects": {
-    "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {
+    "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+        "projectUniqueName": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
         "projectName": "MvcMovie",
-        "projectPath": "D:\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
+        "projectPath": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\MvcMovie.csproj",
         "packagesPath": "C:\\Users\\voduc\\.nuget\\packages\\",
-        "outputPath": "D:\\Net_Core_API\\MvcMovie\\obj\\",
+        "outputPath": "C:\\Users\\voduc\\Downloads\\Net_Core_API\\MvcMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\voduc\\AppData\\Roaming\\NuGet\\NuGet.Config"
