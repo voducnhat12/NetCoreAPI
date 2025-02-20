@@ -1,0 +1,40 @@
+@model MvcMovie.Models.ScoreModel
+
+@{
+    ViewData["Title"] = "Tính điểm môn học";
+}
+
+<h2>Tính điểm môn học</h2>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label>Điểm A:</label>
+        <input asp-for="ScoreA" class="form-control" />
+        <span asp-validation-for="ScoreA" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Điểm B:</label>
+        <input asp-for="ScoreB" class="form-control" />
+        <span asp-validation-for="ScoreB" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label>Điểm C:</label>
+        <input asp-for="ScoreC" class="form-control" />
+        <span asp-validation-for="ScoreC" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Tính điểm</button>
+</form>
+
+@if (ViewBag.FinalScore != null)
+{
+    <h3>Kết quả:</h3>
+    <p>Điểm tổng kết: <b>@ViewBag.FinalScore</b></p>
+    <p>Xếp loại: <b>@ViewBag.Grade</b></p>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
