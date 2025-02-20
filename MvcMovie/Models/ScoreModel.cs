@@ -17,7 +17,7 @@ namespace MvcMovie.Models
         public float ScoreC { get; set; }
 
         // Công thức tính điểm môn học
-        public float FinalScore => (ScoreA * 0.3f) + (ScoreB * 0.3f) + (ScoreC * 0.4f);
+        public float FinalScore => (ScoreA * 0.6f) + (ScoreB * 0.3f) + (ScoreC * 0.1f);
 
         // Xếp loại theo điểm tổng kết
         public string Grade
