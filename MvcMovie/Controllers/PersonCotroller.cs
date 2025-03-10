@@ -1,26 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Data;
 using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
-    public class PersonController : Controller
+    public class PersonCotroller : Controller
     {
         private readonly ApplicationDbContext _context;
-        public PersonController(ApplicationDbContext context)
+
+        public PersonCotroller(ApplicationDbContext context)
         {
             _context = context;
         }
+
+        // GET: PersonCotroller
         public async Task<IActionResult> Index()
         {
-            var model = await _context.Person.ToListAsync();
-            return View(model);
+            return View(await _context.Person.ToListAsync());
         }
+
+        // GET: PersonCotroller/Details/5
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var person = await _context.Person
+                .FirstOrDefaultAsync(m => m.PersonId == id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return View(person);
+        }
+
+        // GET: PersonCotroller/Create
         public IActionResult Create()
         {
             return View();
         }
+
+        // POST: PersonCotroller/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
@@ -33,9 +64,11 @@ namespace MvcMovie.Controllers
             }
             return View(person);
         }
+
+        // GET: PersonCotroller/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Person == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -47,6 +80,10 @@ namespace MvcMovie.Controllers
             }
             return View(person);
         }
+
+        // POST: PersonCotroller/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address")] Person person)
@@ -78,9 +115,11 @@ namespace MvcMovie.Controllers
             }
             return View(person);
         }
+
+        // GET: PersonCotroller/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Person == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -94,14 +133,12 @@ namespace MvcMovie.Controllers
 
             return View(person);
         }
-        [HttpPost]
+
+        // POST: PersonCotroller/Delete/5
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Person == null)
-            {
-return Problem("Entity set 'ApplicationDbContext.Person' is null.");
-            }
             var person = await _context.Person.FindAsync(id);
             if (person != null)
             {
@@ -111,9 +148,10 @@ return Problem("Entity set 'ApplicationDbContext.Person' is null.");
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
         private bool PersonExists(string id)
         {
-            return (_context.Person?.Any(e => e.PersonId == id)).GetValueOrDefault();
+            return _context.Person.Any(e => e.PersonId == id);
         }
     }
 }
