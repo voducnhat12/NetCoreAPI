@@ -7,7 +7,8 @@ namespace MvcMovie.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Person> Person { get; set; }
-        public DbSet<MvcMovie.Models.Employee> Employee { get; set; } = default!;
+        public DbSet<Person> Person { get; set; } = default!;
+         public DbSet<Employee> Employee { get; set; } = default!;
+      //  public DbSet<MvcMovie.Models.Employee> Employee { get; set; } = default!;
     }
 }

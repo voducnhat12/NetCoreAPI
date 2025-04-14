@@ -25,6 +25,11 @@ namespace MvcMovie.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -32,6 +37,30 @@ namespace MvcMovie.Migrations
                     b.HasKey("PersonId");
 
                     b.ToTable("Persons");
+
+                    b.HasDiscriminator().HasValue("Person");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("MvcMovie.Models.Employee", b =>
+                {
+                    b.HasBaseType("MvcMovie.Models.Person");
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("EmpId")
+                        .HasColumnType("INTEGER");
+
+                    b.ToTable("Persons");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 #pragma warning restore 612, 618
         }
