@@ -472,7 +472,14 @@ C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extens
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.IO.RecyclableMemoryStream.dll
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Security.Cryptography.Xml.dll
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Text.Encoding.CodePages.dll
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Text.Encoding.CodePages.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\EPPlus.System.Drawing.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Drawing.Common.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\System.Private.Windows.Core.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\runtimes\win\lib\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\X.PagedList.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\bin\Debug\net9.0\X.PagedList.Mvc.Core.dll
+C:\Users\voduc\Downloads\Net_Core_API\MvcMovie\obj\Debug\net9.0\MvcMovie.MvcApplicationPartsAssemblyInfo.cs

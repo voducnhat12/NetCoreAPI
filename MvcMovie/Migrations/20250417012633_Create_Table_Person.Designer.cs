@@ -10,8 +10,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250414021230_Create_Table_Employee")]
-    partial class Create_Table_Employee
+    [Migration("20250417012633_Create_Table_Person")]
+    partial class Create_Table_Person
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,11 +21,10 @@ namespace MvcMovie.Migrations
 
             modelBuilder.Entity("MvcMovie.Models.Person", b =>
                 {
-                    b.Property<string>("PersonId")
+                    b.Property<string>("Id")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Discriminator")
@@ -37,9 +36,9 @@ namespace MvcMovie.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PersonId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Persons");
+                    b.ToTable("Person");
 
                     b.HasDiscriminator().HasValue("Person");
 
@@ -60,8 +59,6 @@ namespace MvcMovie.Migrations
 
                     b.Property<int>("EmpId")
                         .HasColumnType("INTEGER");
-
-                    b.ToTable("Persons");
 
                     b.HasDiscriminator().HasValue("Employee");
                 });

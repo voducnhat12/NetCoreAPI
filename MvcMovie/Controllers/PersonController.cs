@@ -10,8 +10,8 @@ using MvcMovie.Models;
 using MvcMovie.Models.Process;
 using System.Data;
 using OfficeOpenXml;
-//using X.PagedList;
-//using X.PagedList.Extensions;
+using X.PagedList;
+using X.PagedList.Extensions;
 
 namespace MvcMovie.Controllers
 {
@@ -25,7 +25,7 @@ namespace MvcMovie.Controllers
             _context = context;
         }
 
-     /*  public async Task<IActionResult> Index(int? page, int? PageSize)
+        public async Task<IActionResult> Index(int? page, int? PageSize)
         {
             ViewBag.PageSize = new List<SelectListItem>()
             {
@@ -40,7 +40,7 @@ namespace MvcMovie.Controllers
             ViewBag.psize = pagesize;
             var model = _context.Person.ToList().ToPagedList(page ?? 1, pagesize);
             return View(model);
-        }*/
+        }
 
         // GET: Person
         /* public async Task<IActionResult> Index()
@@ -78,7 +78,7 @@ namespace MvcMovie.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -132,7 +132,7 @@ namespace MvcMovie.Controllers
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         var ps = new Person();
-                        ps.PersonId = dt.Rows[i][0].ToString()!;
+                        ps.Id = dt.Rows[i][0].ToString()!;
                         ps.FullName = dt.Rows[i][1].ToString()!;
                         ps.Address = dt.Rows[i][2].ToString();
                         await _context.AddAsync(ps);
@@ -167,7 +167,7 @@ namespace MvcMovie.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,FullName,Address")] Person person)
         {
-            if (id != person.PersonId)
+            if (id != person.Id)
             {
                 return NotFound();
             }
@@ -181,7 +181,7 @@ namespace MvcMovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonId))
+                    if (!PersonExists(person.Id))
                     {
                         return NotFound();
                     }
@@ -204,7 +204,7 @@ namespace MvcMovie.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -230,7 +230,7 @@ namespace MvcMovie.Controllers
 
         private bool PersonExists(string id)
         {
-            return _context.Person.Any(e => e.PersonId == id);
+            return _context.Person.Any(e => e.Id == id);
         }
     }
 }
