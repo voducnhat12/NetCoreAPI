@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
-//using MvcMovie.Models.Entities;
+using MvcMovie.Models.Entities;
 namespace MvcMovie.Data
 {
     using Microsoft.EntityFrameworkCore;
