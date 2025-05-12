@@ -1,10 +1,10 @@
 @model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
-<div class=" d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center">
     <h3>Role/Index</h3>
-    <a asp-action="Create" class=" btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </div>
 <hr>
-<table class=" table">
+<table class="table">
     <thead>
         <tr>
             <th>RoleID</th>
@@ -19,8 +19,9 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>
-                    <a asp-action="Edit" asp-route-itemid="@item.Id">Edit</a>
-                    <a asp-action="Delete" asp-route-itemid="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> 
+                    <a asp-action="AssignClaim" asp-route-id="@item.Id">Assign Claim</a>
                 </td>
             </tr>
         }

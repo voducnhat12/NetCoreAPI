@@ -17,6 +17,8 @@ namespace MvcMovie.Data
         }
         //Ánh xạ class Student vào trong csdl => tạo ra bảng Students
         public DbSet<Student> Students { get; set; }
+        public DbSet<MemberUnit> MemberUnit { get; set; }
+
         public DbSet<Person> Person { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder builder)
