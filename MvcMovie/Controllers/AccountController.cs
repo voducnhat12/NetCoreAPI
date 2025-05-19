@@ -9,7 +9,7 @@ using MvcMovie.Models.ViewModels;
 
 namespace VicemMVCIdentity.Controllers
 {
-    [Authorize(Policy = "PolicyByPhoneNumber")] 
+  [Authorize(Policy = "PolicyByPhoneNumber")] 
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -19,7 +19,7 @@ namespace VicemMVCIdentity.Controllers
             _userManager = userManager;
             _roleManager = roleManager;
         }
-        /*  [Authorize(Policy = nameof(SystemPermissions.AccountView))] */
+       /*  [Authorize(Policy = nameof(SystemPermissions.AccountView))] */
         public async Task<ActionResult> Index()
         {
             var users = await _userManager.Users.ToListAsync();
@@ -33,7 +33,7 @@ namespace VicemMVCIdentity.Controllers
 
             return View(usersWithRoles);
         }
-        /*  [Authorize(Policy = nameof(SystemPermissions.AssignRole))] */
+         [Authorize(Policy = nameof(SystemPermissions.AssignRole))] 
         public async Task<IActionResult> AssignRole(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
