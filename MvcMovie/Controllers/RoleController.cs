@@ -55,7 +55,7 @@ namespace MvcMovie.Controllers
             await _roleManager.UpdateAsync(role);
             return RedirectToAction("Index");
         }
-        [Authorize(Policy = nameof(SystemPermissions.RoleDelete))]
+      /*   [Authorize(Policy = nameof(SystemPermissions.RoleDelete))] */
         [HttpPost]
         public async Task<IActionResult> Delete(string id)
         {

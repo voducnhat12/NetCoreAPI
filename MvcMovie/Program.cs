@@ -15,7 +15,7 @@ builder.Services.AddTransient<IEmailSender, SendMailService>();
 builder.Services.AddRazorPages();
 
 // Add services to the container.
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
            .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddAuthorization(options =>
@@ -25,11 +25,11 @@ builder.Services.AddAuthorization(options =>
         options.AddPolicy(permission.ToString(), policy =>
             policy.RequireClaim("Permission", permission.ToString()));
     }
-   /* options.AddPolicy("Role", policy => policy.RequireClaim("Role", "AdminOnly"));
+    options.AddPolicy("Role", policy => policy.RequireClaim("Role", "AdminOnly"));
     options.AddPolicy("Permission", policy => policy.RequireClaim("Role", "EmployeeOnly"));
     options.AddPolicy("PolicyAdmin", policy => policy.RequireRole("Admin"));
     options.AddPolicy("PolicyEmployee", policy => policy.RequireRole("Employee"));
-    options.AddPolicy("PolicyByPhoneNumber", policy => policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));*/
+    options.AddPolicy("PolicyByPhoneNumber", policy => policy.Requirements.Add(new PolicyByPhoneNumberRequirement()));
 });
 builder.Services.AddSingleton<IAuthorizationHandler, PolicyByPhoneNumberHandler>();
 builder.Services.Configure<IdentityOptions>(options =>

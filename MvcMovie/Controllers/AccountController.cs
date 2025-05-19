@@ -9,7 +9,7 @@ using MvcMovie.Models.ViewModels;
 
 namespace VicemMVCIdentity.Controllers
 {
-    /* [Authorize(Policy = "PolicyByPhoneNumber")] */
+    [Authorize(Policy = "PolicyByPhoneNumber")] 
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

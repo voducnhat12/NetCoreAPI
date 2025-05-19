@@ -28,7 +28,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Details/5
-        [Authorize(Roles = "employee")]
+        [Authorize(Roles = "Employee")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -47,7 +47,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Create
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -70,7 +70,7 @@ namespace MvcMovie.Controllers
         }
 
         // GET: Employee/Edit/5
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
